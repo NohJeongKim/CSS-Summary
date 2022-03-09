@@ -1,0 +1,54 @@
+@import "reset.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Gaegu&display=swap");
+
+/* 나중에 이미지와 텍스트가 겹쳐질 수 있도록 위 아래로 나란히 놓아준다. */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gaegu", cursive;
+  background-color: #e6e9ee;
+}
+
+img {
+  width: 400px;
+  height: 300px;
+  padding: 20px 12px;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: 150px; /* 너무 위에 붙어 있어서 조정해주었다. */
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.detail div {
+  width: 390px; /* padding: 5px+5px=10px */
+  height: 290px; /* padding: 5px+5px=10px */
+  border: 2px solid #434a54;
+  padding: 5px;
+  margin: 20px 14px;
+  transform: translateY(-345px); /* 텍스트를 이미지 위에 덮어준다. */
+  transition: all 0.5s cubic-bezier(0, 0.04, 0.43, 0.91);
+  color: #434a54;
+  background-color: #f5c4ed;
+  text-align: center;
+  opacity: 0; /* 평소에는 보이지 않도록 만든다. */
+}
+
+.detail div:hover {
+  opacity: 1; /* 불투명하게 만든다. 그래서 보이도록 만들어준다. */
+}
+
+/* display: block과 none을 사용해봤는데 제대로 동작하지 않아서 opacity를 이용하게 되었다. */
